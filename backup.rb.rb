@@ -9,7 +9,7 @@ def game_hash
 								{:player_name => "Alan Anderson",
 								:number => 0,
 								:shoe => 16,
-								:points => 22, 
+								:num_points_scored => 22, 
 								:rebounds => 12, 
 								:assists => 12, 
 								:steals => 3, 
@@ -19,7 +19,7 @@ def game_hash
 								{:player_name => "Reggie Evans",
 								:number => 30,
 								:shoe => 14,
-								:points => 12, 
+								:num_points_scored => 12, 
 								:rebounds => 12, 
 								:assists => 12, 
 								:steals => 12, 
@@ -29,7 +29,7 @@ def game_hash
 								{:player_name => "Brook Lopez",
 								:number => 11,
 								:shoe => 17,
-								:points => 17, 
+								:num_points_scored => 17, 
 								:rebounds => 19, 
 								:assists => 10, 
 								:steals => 3, 
@@ -39,7 +39,7 @@ def game_hash
 								{:player_name => "Mason Plumlee",
 								:number => 1,
 								:shoe => 19,
-								:points => 26, 
+								:num_points_scored => 26, 
 								:rebounds => 12, 
 								:assists => 6, 
 								:steals => 3, 
@@ -49,7 +49,7 @@ def game_hash
 								{:player_name => "Jason Terry",
 								:number => 31,
 								:shoe => 15,
-								:points => 19, 
+								:num_points_scored => 19, 
 								:rebounds => 2, 
 								:assists => 2, 
 								:steals => 4, 
@@ -63,7 +63,7 @@ def game_hash
 								{:player_name => "Jeff Adrien",
 								:number => 4,
 								:shoe => 18,
-								:points => 10, 
+								:num_points_scored => 10, 
 								:rebounds => 1, 
 								:assists => 1, 
 								:steals => 2, 
@@ -73,7 +73,7 @@ def game_hash
 								{:player_name => "Bismak Biyombo",
 								:number => 0,
 								:shoe => 16,
-								:points => 12, 
+								:num_points_scored => 12, 
 								:rebounds => 4, 
 								:assists => 7, 
 								:steals => 7, 
@@ -83,7 +83,7 @@ def game_hash
 								{:player_name => "DeSagna Diop",
 								:number => 2,
 								:shoe => 14,
-								:points => 24, 
+								:num_points_scored => 24, 
 								:rebounds => 12, 
 								:assists => 12, 
 								:steals => 4, 
@@ -93,7 +93,7 @@ def game_hash
 								{:player_name => "Ben Gordon",
 								:number => 8,
 								:shoe => 15,
-								:points => 33, 
+								:num_points_scored => 33, 
 								:rebounds => 3, 
 								:assists => 2, 
 								:steals => 1, 
@@ -103,7 +103,7 @@ def game_hash
 								{:player_name => "Brendan Haywood",
 								:number => 33,
 								:shoe => 15,
-								:points => 6, 
+								:num_points_scored => 6, 
 								:rebounds => 12, 
 								:assists => 12, 
 								:steals => 22, 
@@ -115,16 +115,16 @@ def game_hash
 	return games
 end
 	
-def points_raw(array, name)
+def num_points_scored_raw(array, name)
 	array.each do |player|
-	return player[:points] if player[:player_name] == name
+	return player[:num_points_scored] if player[:player_name] == name
 	end
 	return false
 end
 	
 def num_points_scored(name)
-	 return points_raw(game_hash[:home][:players],name) if points_raw(game_hash[:home][:players],name)
-	 return points_raw(game_hash[:away][:players],name) if points_raw(game_hash[:away][:players],name)
+	 return num_points_scored_raw(game_hash[:home][:players],name) if num_points_scored_raw(game_hash[:home][:players],name)
+	 return num_points_scored_raw(game_hash[:away][:players],name) if num_points_scored_raw(game_hash[:away][:players],name)
 end
 
 def shoe_size_raw(array, name)
@@ -171,23 +171,8 @@ def player_stats(player_name)
 	end
 end
 
-def big_shoe_rebounds
-	#find largest shoe size
-	max_size = 0
-	game_hash.each do |location, team_data|
-		team_data[:players].each {|a| max_size = a[:shoe] if a[:shoe] > max_size }
-	end
-	
-	#get that from the array
-	rebounds = nil
-	game_hash.each do |location, team_data|
-		team_data[:players].each {|a| rebounds = a[:rebounds] if a[:shoe] == max_size }
-	end
-	return rebounds
-end
-
 #puts player_stats("Bismak Biyombo")
 #puts team_colors("Brooklyn Nets")
 #puts team_names()
 
-puts big_shoe_rebounds
+
