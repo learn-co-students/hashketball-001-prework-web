@@ -1,6 +1,6 @@
 
 # Write your code here!
-def game_hash
+def game_hash #generate hash
   game = {
     home: {team_name: "Brooklyn Nets", colors: ["Black", "White"], players:
       [
@@ -122,22 +122,22 @@ def game_hash
   game
 end
 
-def num_points_scored(name)
+def num_points_scored(name) #return points scored by player
   return game_hash[:home][:players][0][name][:points] if game_hash[:home][:players][0].keys.include?(name)
   return game_hash[:away][:players][0][name][:points] if game_hash[:away][:players][0].keys.include?(name)
 end
 
-def shoe_size(name)
+def shoe_size(name) #return shoesize of player
   return game_hash[:home][:players][0][name][:shoe] if game_hash[:home][:players][0].keys.include?(name)
   return game_hash[:away][:players][0][name][:shoe] if game_hash[:away][:players][0].keys.include?(name)
 end
 
-def team_colors(name)
+def team_colors(name) #return team colors of team
   return game_hash[:home][:colors] if game_hash[:home][:team_name]==(name)
   return game_hash[:away][:colors] if game_hash[:away][:team_name]==(name)
 end
 
-def team_names
+def team_names #get array containing all teams
   teams = []
   game_hash.each do |team, info|
     teams << info[:team_name]
@@ -145,7 +145,7 @@ def team_names
   teams
 end
 
-def player_numbers(team_name)
+def player_numbers(team_name) #get array of player numbers for a team
   numbers = []
   game_hash.each do |team, info|
     if(info[:team_name]==team_name)
@@ -157,7 +157,7 @@ def player_numbers(team_name)
   numbers
 end
 
-def player_stats(name)
+def player_stats(name) #get player stats of player
   return game_hash[:home][:players][0][name] if game_hash[:home][:players][0].keys.include?(name)
   return game_hash[:away][:players][0][name] if game_hash[:away][:players][0].keys.include?(name)
 end
