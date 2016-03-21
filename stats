@@ -1,0 +1,21 @@
+
+[1mFrom:[0m /home/nitrous/code/labs/hashketball-001-prework-web/hashketball.rb @ line 89 Object#player_numbers:
+
+    [1;34m82[0m: [32mdef[0m [1;34mplayer_numbers[0m (team)
+    [1;34m83[0m: playersNum=[]
+    [1;34m84[0m:  game_hash.each [32mdo[0m |location, team_data|
+    [1;34m85[0m:      team_data.each [32mdo[0m |attribute, data|
+    [1;34m86[0m:         [32mif[0m data[[1;34m0[0m]==team
+    [1;34m87[0m:         team_data.values[[1;34m2[0m].each [32mdo[0m |players,stats|
+    [1;34m88[0m:               stats.each [32mdo[0m |value,amount|
+ => [1;34m89[0m:                 binding.pry
+    [1;34m90[0m:                 [32mif[0m stat == [33m:number[0m
+    [1;34m91[0m:                   playersNum<< amount
+    [1;34m92[0m:                 [32mend[0m
+    [1;34m93[0m:            [32mend[0m
+    [1;34m94[0m:         [32mend[0m
+    [1;34m95[0m:       [32mend[0m
+    [1;34m96[0m:     [32mend[0m
+    [1;34m97[0m:   [32mend[0m
+    [1;34m98[0m: [32mend[0m
+
