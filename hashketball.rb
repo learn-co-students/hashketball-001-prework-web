@@ -193,11 +193,11 @@ player= ""
 steals=0
   game_hash.each do |location, team_data|
      team_data.each do |attribute, data|
-        data.each do |playersNames,stats|
+        data.each do |playersName,stats|
             if stats.is_a? Hash
             if steals<stats[:steals]
                steals=stats[:steals]
-               player=playersNames
+               player=playersName
             end
          end
         end
