@@ -138,11 +138,8 @@ game_hash.each do |location, teaminfo|
       info.each do |playername, stats|
         if playername = player_name
           values.push(stats.values)
-
         end
-
       end
-
       else
     end
   end
@@ -164,16 +161,12 @@ game_hash.each do |location, teaminfo|
       info.each do |playername, stats|
         if playername = player_name
           values.push(stats.values)
-
         end
-
       end
-
       else
     end
   end
 end
-values
 values.each do |x|
   if x.include?(player_name) == true
     return x[2]
@@ -294,7 +287,6 @@ game_hash.each do |location, teaminfo|
     end
   end
 end
-
 biggestshoe = shoesizesarray.max
 indexx = shoesizesarray.find_index(biggestshoe)
 return reboundsarray[indexx]
