@@ -164,12 +164,8 @@ end
 
 def most_points_scored
     max_score = (game_hash[:home][:players].collect{|name, attributes| num_points_scored(name)} + game_hash[:away][:players].collect{|name, attributes| num_points_scored(name)}).max
-    game_hash[:home][:players].collect do |name, attributes|
-    return name if game_hash[:home][:players][name][:points] == max_score
-    end.flatten.compact
-    game_hash[:away][:players].collect do |name, attributes|
-    return name if game_hash[:away][:players][name][:points] == max_score
-    end.flatten.compact
+    all_names = game_hash[:home][:players].collect{|name, attributes| name} + game_hash[:away][:players].collect{|name, attributes| name}
+    all_names.each{|name| return name if num_points_scored(name) == max_score}
 end
 
 def winning_team
