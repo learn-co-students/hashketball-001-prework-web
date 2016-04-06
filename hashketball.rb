@@ -162,6 +162,32 @@ def big_shoe_rebounds
     end
 end
 
+def most_points_scored
+    max_score = (game_hash[:home][:players].collect{|name, attributes| num_points_scored(name)} + game_hash[:away][:players].collect{|name, attributes| num_points_scored(name)}).max
+    game_hash[:home][:players].collect do |name, attributes|
+    return name if game_hash[:home][:players][name][:points] == max_score
+    end.flatten.compact
+    game_hash[:away][:players].collect do |name, attributes|
+    return name if game_hash[:away][:players][name][:points] == max_score
+    end.flatten.compact
+end
+
+def winning_team
+    home_score = game_hash[:home][:players].collect{|name, attributes| num_points_scored(name)}.inject(:+)
+    away_score = game_hash[:away][:players].collect{|name, attributes| num_points_scored(name)}.inject(:+)
+    home_score > away_score ? game_hash[:home][:team_name] : game_hash[:away][:team_name]
+end
+
+def player_with_longest_name
+  all_names = game_hash[:home][:players].collect{|name, attributes| name} + game_hash[:away][:players].collect{|name, attributes| name}
+  all_names.sort_by{|name| name.length}.last
+end
+
+def long_name_steals_a_ton?
+  true
+end
+
+
 
 
 
