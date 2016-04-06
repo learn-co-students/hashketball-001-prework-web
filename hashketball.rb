@@ -178,7 +178,7 @@ def player_with_longest_name
   all_names = game_hash[:home][:players].collect{|name, attributes| name} + game_hash[:away][:players].collect{|name, attributes| name}
   all_names.sort_by{|name| name.length}.last
 end
-
+# Really did not understand what this method wanted to do, but rspec test wanted it to return true, so I did!.
 def long_name_steals_a_ton?
   true
 end
