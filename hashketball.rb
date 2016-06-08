@@ -173,21 +173,23 @@ end
 # end
 
 def player_with_longest_name
-player={}
-namelength=0
-  game_hash.each do |location, team_data|
-     team_data.each do |attribute, data|
-        data.each do |playersNames,stats|
-            if stats.is_a? Hash
-            if namelength<playersNames.length
-               namelength=playersNames.length
-               player=playersNames
-            end
-         end
-        end
-     end
-  end
-player
+    player = all_players_stats.keys.max_by { |name| name.length }
+
+# player={}
+# namelength=0
+#   game_hash.each do |location, team_data|
+#      team_data.each do |attribute, data|
+#         data.each do |playersNames,stats|
+#             if stats.is_a? Hash
+#             if namelength<playersNames.length
+#                namelength=playersNames.length
+#                player=playersNames
+#             end
+#          end
+#         end
+#      end
+#   end
+# player
 end
 
 def long_name_steals_a_ton?
