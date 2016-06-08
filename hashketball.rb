@@ -173,8 +173,7 @@ end
 # end
 
 def player_with_longest_name
-    player = all_players_stats.keys.max_by { |name| name.length }
-
+    player = all_players_stats.keys.max_by { |name| name.length}
 # player={}
 # namelength=0
 #   game_hash.each do |location, team_data|
