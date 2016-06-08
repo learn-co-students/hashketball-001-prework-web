@@ -140,7 +140,6 @@ home_score=game_hash[:home][:players].inject(0){|mem,(players,stats)| mem +=stat
 away_score=game_hash[:away][:players].inject(0){|mem,(players,stats)| mem +=stats[:points]}
 #compare both teams points and declare the winner
 home_score>away_score ?  game_hash[:home][:team_name].first : game_hash[:away][:team_name].first
-binding.pry
 end
 
 
