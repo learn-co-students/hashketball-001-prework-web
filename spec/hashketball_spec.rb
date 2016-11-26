@@ -60,7 +60,7 @@ describe 'hashketball' do
   describe '#team_colors' do
 
     it 'knows the Brooklyn Nets colors are Black and White' do
-      expect(team_colors("Brooklyn Nets")).to contain_exactly("Black", "White")
+       expect(team_colors("Brooklyn Nets")).to contain_exactly("Black", "White")
       expect(team_colors("Charlotte Hornets")).to contain_exactly("Turquoise", "Purple")
       end
     end
@@ -248,42 +248,42 @@ end
 
 # If you'd like to work on the bonus, uncomment these tests.
 
-# describe 'bonus' do
+describe 'bonus' do
 
-#   describe '#most_points_scored' do
+   describe '#most_points_scored' do
 
-#     it 'returns Ben Gordon' do
-#       expect(most_points_scored).to eq("Ben Gordon")
-#     end
+    it 'returns Ben Gordon' do
+       expect(most_points_scored).to eq("Ben Gordon")
+     end
 
-#   end
+   end
 
-#   describe '#winning_team' do
+   describe '#winning_team' do
 
-#     it 'returns the Brooklyn Nets' do
-#       expect(winning_team).to eq("Brooklyn Nets")
-#     end
+     it 'returns the Brooklyn Nets' do
+      expect(winning_team).to eq("Brooklyn Nets")
+     end
 
-#   end
+   end
 
-#   describe '#player_with_longest_name' do
+  describe '#player_with_longest_name' do
 
-#     it 'returns Brendan Haywood' do
-#       expect(player_with_longest_name).to eq("Brendan Haywood")
-#     end
+     it 'returns Brendan Haywood' do
+       expect(player_with_longest_name).to eq("Brendan Haywood")
+    end
 
-#   end
+  end
 
-# end
+ end
 
-# describe 'super bonus' do
+ describe 'super bonus' do
 
-#   describe '#long_name_steals_a_ton?' do
+   describe '#long_name_steals_a_ton?' do
 
-#     it 'returns true' do
-#       expect(long_name_steals_a_ton?).to eq(true)
-#     end
+     it 'returns true' do
+       expect(long_name_steals_a_ton?).to eq(true)
+    end
 
-#   end
+   end
 
-# end
+ end
